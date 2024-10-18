@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useFormState } from 'react-dom';
 import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
 import {
   CheckIcon,
@@ -27,7 +27,7 @@ export default function EditInvoiceForm({
 
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id)
   
-  const [state, formAction] = useActionState(updateInvoiceWithId, initialState)
+  const [state, formAction] = useFormState(updateInvoiceWithId, initialState)
   return (
     <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">

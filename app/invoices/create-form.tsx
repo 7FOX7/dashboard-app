@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState } from 'react';
+import { useFormState } from 'react-dom';
 import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import {
@@ -19,7 +19,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
     errors: {}
   }
 
-  const [state, formAction] = useActionState(createInvoice, initialState)    // the returned error from 'createInvoice' (if any) will be stored in the state
+  const [state, formAction] = useFormState(createInvoice, initialState)    // the returned error from 'createInvoice' (if any) will be stored in the state
   return (
     <form action={formAction}>    
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
